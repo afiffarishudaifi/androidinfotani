@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent kembali_ke_login = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(kembali_ke_login);
+                finish();
             }
         });
         imgBtnsimpan = (ImageButton)findViewById(R.id.imgBtnsimpan);
