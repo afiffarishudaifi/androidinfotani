@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:background="@drawable/bg"
+    tools:context=".RegisterActivity">
 
     <ImageView
-        android:id="@+id/loginpetani"
+        android:id="@+id/registerpetani"
         android:contentDescription="@string/login_petani"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/loginpetani"/>
+        android:src="@drawable/registrasipetani"/>
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -34,9 +34,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="130dp">
-        <EditText
-            android:id="@+id/username"
-            android:autofillHints="@string/nama_pengguna"
+            <EditText
+            android:id="@+id/regUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -44,44 +43,41 @@
             android:gravity="center"
             android:hint="@string/nama_pengguna"
             android:inputType="text" />
-     <EditText
-         android:id="@+id/password"
-         android:autofillHints="@string/kata_sandi"
-         android:hint="@string/kata_sandi"
-         android:inputType="textPassword"
-         android:gravity="center"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgtext"/>
-        <LinearLayout
-            android:id="@+id/pt"
+        <EditText
+            android:id="@+id/regPassword"
+            android:hint="@string/kata_sandi"
+            android:inputType="textPassword"
+            android:gravity="center"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:id="@+id/pertanyaan"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:contentDescription="@string/pertanyaan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pertanyaan"/>
-            <ImageButton
-                android:layout_margin="5dp"
-                android:id="@+id/imgBtndaftar"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:contentDescription="@string/imgbtndaftar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/transparant"
-                android:src="@drawable/btdaftar"/>
-        </LinearLayout>
+            android:background="@drawable/bgtext"/>
+        <EditText
+            android:id="@+id/regKonfpassword"
+            android:hint="@string/konfirmasi_kata_sandi"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgtext"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/foto"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pilih_foto"
+            android:textSize="10sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
         <LinearLayout
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
@@ -89,7 +85,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <ImageButton
-                android:id="@+id/imgBtnMasuk"
+                android:id="@+id/imgBtnsimpan"
                 android:layout_margin="5dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -97,9 +93,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bgmasuk"
-                android:src="@drawable/masuk"/>
+                android:src="@drawable/simpan"/>
             <ImageButton
-                android:id="@+id/imgBtnKeluar"
+                android:id="@+id/imgBtnkembali"
                 android:layout_margin="5dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -107,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bgkeluar"
-                android:src="@drawable/keluar"/>
+                android:src="@drawable/kembali"/>
         </LinearLayout>
             </LinearLayout>
         <LinearLayout
@@ -115,7 +111,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="0dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp">

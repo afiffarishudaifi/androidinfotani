@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Infotani</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="login_petani">Login Petani</string>
+    <string name="logo_petani">Logo Petani</string>
+    <string name="pertanyaan">pertanyaan</string>
+    <string name="imgbtndaftar">imgBtndaftar</string>
+    <string name="btnmasuk">Masuk</string>
+    <string name="btnkeluar">Keluar</string>
+    <string name="logo">logo</string>
+    <string name="logo_text">logo text</string>
+    <string name="foto">Foto</string>
+    <string name="pilih_foto">Pilih...</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
 </resources>
