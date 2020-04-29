@@ -3,6 +3,7 @@
     <string name="nama_pengguna">Nama Pengguna</string>
     <string name="kata_sandi">Kata Sandi</string>
     <string name="login_petani">Login Petani</string>
+    <string name="reset_password">Reset Password</string>
     <string name="logo_petani">Logo Petani</string>
     <string name="pertanyaan">pertanyaan</string>
     <string name="imgbtndaftar">imgBtndaftar</string>
