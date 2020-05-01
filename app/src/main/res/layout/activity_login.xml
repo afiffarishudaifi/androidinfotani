@@ -17,16 +17,17 @@
         android:layout_height="wrap_content"
         android:src="@drawable/loginpetani"/>
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/formlogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
+        android:gravity="center"
         android:orientation="vertical"
         android:background="@drawable/bgform1">
             <LinearLayout
@@ -34,9 +35,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="130dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
         <EditText
             android:id="@+id/username"
-            android:autofillHints="@string/nama_pengguna"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -44,16 +47,21 @@
             android:gravity="center"
             android:hint="@string/nama_pengguna"
             android:inputType="text" />
-     <EditText
-         android:id="@+id/password"
-         android:autofillHints="@string/kata_sandi"
-         android:hint="@string/kata_sandi"
-         android:inputType="textPassword"
-         android:gravity="center"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgtext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:passwordToggleEnabled="true">
+         <EditText
+             android:id="@+id/password"
+             android:hint="@string/kata_sandi"
+             android:inputType="textPassword"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/bgtext"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:id="@+id/pt"
             android:layout_margin="10dp"
@@ -82,14 +90,21 @@
                 android:background="@color/transparant"
                 android:src="@drawable/btdaftar"/>
         </LinearLayout>
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:visibility="gone"/>
         <LinearLayout
+            android:id="@+id/linearLayoutBtn"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center">
             <ImageButton
-                android:id="@+id/imgBtnMasuk"
+                android:id="@+id/imgBtnmasuk"
                 android:layout_margin="5dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -99,7 +114,7 @@
                 android:background="@drawable/bgmasuk"
                 android:src="@drawable/masuk"/>
             <ImageButton
-                android:id="@+id/imgBtnKeluar"
+                android:id="@+id/imgBtnkeluar"
                 android:layout_margin="5dp"
                 android:clickable="true"
                 android:focusable="true"
