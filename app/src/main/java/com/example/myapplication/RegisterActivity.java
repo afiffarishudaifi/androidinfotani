@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,11 +40,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    ImageButton imgBtnkembali, imgBtnsimpan;
-    ImageView imageUpload;
-    EditText username, password, konfpassword;
-    Button btnUpload;
-    Bitmap bitmap;
+    private ImageButton imgBtnkembali, imgBtnsimpan;
+    private ImageView imageUpload;
+    private ProgressBar loading;
+    private EditText username, password, konfpassword;
+    private Button btnUpload;
+    private LinearLayout linearLayoutBtnregister;
+    private Bitmap bitmap;
     final int CODE_GALLERY_REQUEST = 999;
     String URL_REGISTRASI;
     @Override
@@ -55,9 +59,11 @@ public class RegisterActivity extends AppCompatActivity {
         konfpassword = (EditText)findViewById(R.id.regKonfpassword);
         btnUpload = (Button)findViewById(R.id.btnUpload);
         imageUpload = (ImageView)findViewById(R.id.imageUpload);
+        loading = (ProgressBar)findViewById(R.id.loading);
+        linearLayoutBtnregister = (LinearLayout)findViewById(R.id.linearLayoutBtnRegister);
 
         Api registrasi = new Api();
-        URL_REGISTRASI = registrasi.URL_REGISTRASI;
+        URL_REGISTRASI = registrasi.getURL_REGIST();
 
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +98,11 @@ public class RegisterActivity extends AppCompatActivity {
         if (requestCode == CODE_GALLERY_REQUEST && resultCode == RESULT_OK && data != null){
             Uri filePath = data.getData();
             try {
+                //mengambil gambar dari Gallery
                 InputStream inputStream = getContentResolver().openInputStream(filePath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
-                imageUpload.setImageBitmap(bitmap);
+                //menampilkan gambar ke imageview
+                imageUpload.setImageBitmap(getResizedBitmap(bitmap,360));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -109,6 +117,21 @@ public class RegisterActivity extends AppCompatActivity {
 
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
+    }
+    //resize gambar
+    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true);
     }
 
     public void initControl() {
@@ -134,6 +157,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void simpan() {
+        linearLayoutBtnregister.setVisibility(View.GONE);
+        loading.setVisibility(View.VISIBLE);
+
         final String user =  this.username.getText().toString().trim();
         final String pass =  this.password.getText().toString().trim();
         final String konfirmasipass = this.konfpassword.getText().toString().trim();
@@ -146,10 +172,15 @@ public class RegisterActivity extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 Toast.makeText(RegisterActivity.this, "Pesan : " + jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                loading.setVisibility(View.GONE);
+                                linearLayoutBtnregister.setVisibility(View.VISIBLE);
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                                Toast.makeText(RegisterActivity.this, "Pesan : Sukses terdaftar", Toast.LENGTH_SHORT).show();
-
+                                Toast.makeText(RegisterActivity.this, "Pesan : " + e.toString(), Toast.LENGTH_SHORT).show();
+                                System.out.println(e.toString());
+                                loading.setVisibility(View.GONE);
+                                linearLayoutBtnregister.setVisibility(View.VISIBLE);
                             }
 
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
@@ -159,6 +190,9 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                            System.out.println(error.toString());
+                            loading.setVisibility(View.GONE);
+                            linearLayoutBtnregister.setVisibility(View.VISIBLE);
                         }
                     }) {
                 @Override
@@ -167,7 +201,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Map<String, String> map = new HashMap<>();
                     map.put("username", user);
                     map.put("password", pass);
-                    map.put("konfirpassword", konfirmasipass);
+                    map.put("passwordconf", konfirmasipass);
                     map.put("foto", imageData);
                     return map;
                 }
