@@ -70,7 +70,14 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginEnd="15dp"/>
+            <ImageView
+                android:id="@+id/imageUpload"
+                android:layout_width="60px"
+                android:layout_height="60px">
+
+            </ImageView>
         <Button
+            android:id="@+id/btnUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pilih_foto"
