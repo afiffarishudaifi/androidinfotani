@@ -7,16 +7,48 @@
     android:background="@drawable/bg"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:id="@+id/foto_user"
+            android:src="@drawable/ic_person_white_24dp"/>
+            <TextView
+                android:id="@+id/namaPengguna"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/nama_pengguna"
+                android:layout_margin="5dp"/>
+        <ImageButton
+            android:clickable="true"
+            android:layout_margin="5dp"
+            android:id="@+id/imgBtnpengaturan"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:onClick="onClickPengaturan"
+            android:src="@drawable/menusetting"
+            />
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
 
     <ImageView
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/bgtext"/>
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/formlogin"
@@ -27,13 +59,13 @@
         android:background="@drawable/bgform">
 
         <LinearLayout
-
-            android:layout_weight="3"
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:weightSum="2"
             android:layout_height="wrap_content">
-
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/btnDatapetani"
+                android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
@@ -41,100 +73,78 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menupetani"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
+                android:focusable="true" />
+            <ImageButton
+                android:id="@+id/btnFormpanen"
+                android:clickable="true"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
                 android:layout_weight="1"
+                android:layout_height="150dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menupanen"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
+                android:focusable="true" />
         </LinearLayout>
 
         <LinearLayout
-
-            android:layout_weight="3"
+            android:weightSum="2"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/btnLappanen"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menulappanen"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
+                android:focusable="true"/>
+            <ImageButton
+                android:id="@+id/btnLappesan"
                 android:layout_width="0dp"
+                android:clickable="true"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menulappemesanan"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-
-
-
-
+                android:focusable="true"/>
         </LinearLayout>
 
         <LinearLayout
-
-            android:layout_weight="3"
+            android:weightSum="2"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/btnRiwayatpesan"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
+                android:clickable="true"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menuriwayat"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
+                android:focusable="true"/>
+            <ImageButton
+                android:id="@+id/btnTanya"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
+                android:clickable="true"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/menutanyaadmin"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-
-
-
-
+                android:orientation="vertical"
+                android:focusable="true" />
         </LinearLayout>
-
-
-
-
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>
