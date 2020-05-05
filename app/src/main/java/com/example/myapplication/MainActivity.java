@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .load(URL_FOTO)
                 // LOAD GAMBAR AWAL SEBELUM GAMBAR UTAMA MUNCUL, BISA DARI LOKAL DAN INTERNET
                 .placeholder(R.drawable.ic_person_white_24dp)
+                //. LOAD GAMBAR SAAT TERJADI KESALAHAN MEMUAT GMBR UTAMA
+                .error(R.drawable.ic_person_white_24dp)
                 .into(fotoUser);
     }
 
