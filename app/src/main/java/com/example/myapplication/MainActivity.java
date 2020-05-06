@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView username, id_user;
     private ImageButton btnDatapetani, btnFormpanen, btnLappanen,
-            btnLappesan, btnRiwayatpesan, btnFormtanya;
+            btnLappesan, btnRiwayatpesan, btnFormtanya, btnPengaturan;
     private ImageView fotoUser;
     SessionManager sessionManager;
 
@@ -71,14 +71,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRiwayatpesan.setOnClickListener(this);
         btnFormtanya = (ImageButton) findViewById(R.id.btnTanya);
         btnFormtanya.setOnClickListener(this);
+        btnPengaturan = (ImageButton)findViewById(R.id.imgBtnpengaturan);
+        btnPengaturan.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-//            case R.id.btnLogout:
-//                sessionManager.logout();
-//                break;
+            case R.id.imgBtnpengaturan:
+                sessionManager.logout();
+                finish();
+                break;
             case R.id.btnDatapetani:
                 Intent dataPetani = new Intent(MainActivity.this, DataPetaniActivity.class);
                 startActivity(dataPetani);

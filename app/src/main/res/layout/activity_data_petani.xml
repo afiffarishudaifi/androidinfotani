@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="130dp">
+                android:layout_marginTop="190dp">
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
@@ -46,7 +46,7 @@
                         android:background="@drawable/bgtext"
                         android:gravity="center"
                         android:hint="KTP"
-                        android:inputType="text" />
+                        android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
@@ -64,23 +64,30 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
-                    <EditText
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="Desa"
+                        android:textSize="9sp"
+                        android:layout_height="wrap_content"
+                        tools:ignore="SmallSp" />
+                    <Spinner
                         android:id="@+id/spinner_desa"
                         android:layout_width="wrap_content"
                         android:background="@drawable/bgtext"
-                        android:layout_margin="10dp"
-                        android:hint="Desa"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:gravity="center"
                         android:layout_height="wrap_content"/>
-<!--                    <TextView-->
-<!--                        android:id="@+id/spHasil"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_margin="10dp"-->
-<!--                        android:background="@drawable/bgtext"-->
-<!--                        android:gravity="center"-->
-<!--                        android:hint="Desa"-->
-<!--                        android:inputType="text" />-->
+                    <ProgressBar
+                        android:id="@+id/loadingSpinnerDesa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:visibility="gone"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
@@ -93,33 +100,48 @@
                         android:background="@drawable/bgtext"
                         android:gravity="center"
                         android:hint="No HP"
-                        android:inputType="text" />
+                        android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
-                    <EditText
-                        android:id="@+id/komoditas"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="Komoditas"
+                        android:textSize="9sp"
+                        android:layout_height="wrap_content"
+                        tools:ignore="SmallSp" />
+                    <Spinner
+                        android:id="@+id/spinner_komoditas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/bgtext"
-                        android:gravity="center"
-                        android:hint="Komoditas"
-                        android:inputType="text" />
+                        android:gravity="center" />
+                    <ProgressBar
+                        android:id="@+id/loadingSpinnerKomoditas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:visibility="gone"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
-                    <EditText
+                    <TextView
                         android:id="@+id/tglpanen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Tanggal Panen"
-                        android:inputType="text" />
+                        android:onClick="onClick"
+                        android:hint="@string/tanggal_panen" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

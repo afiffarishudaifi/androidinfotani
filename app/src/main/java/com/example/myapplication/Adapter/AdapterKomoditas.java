@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.myapplication.Model.DataDesa;
+import com.example.myapplication.Model.DataKomoditas;
 import com.example.myapplication.R;
 
 import java.util.List;
 
-public class AdapterDesa extends BaseAdapter {
+public class AdapterKomoditas extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
-    private List<DataDesa> item;
+    private List<DataKomoditas> item;
 
-    public AdapterDesa(Activity activity, List<DataDesa> item) {
+    public AdapterKomoditas(Activity activity, List<DataKomoditas> item) {
         this.activity = activity;
         this.item = item;
     }
@@ -46,14 +46,14 @@ public class AdapterDesa extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.list_desa, null);
+            convertView = inflater.inflate(R.layout.list_komoditas, null);
 
-        TextView desa = (TextView) convertView.findViewById(R.id.desa);
+        TextView komoditas = (TextView) convertView.findViewById(R.id.komoditas);
 
-        DataDesa data;
+        DataKomoditas data;
         data = item.get(position);
 
-        desa.setText(data.getNamaDesa());
+        komoditas.setText(data.getNamaKomoditas());
 
         return convertView;
     }

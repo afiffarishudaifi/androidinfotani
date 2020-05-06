@@ -14,4 +14,5 @@
     <string name="foto">Foto</string>
     <string name="pilih_foto">Pilih...</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="tanggal_panen">Tanggal Panen</string>
 </resources>

@@ -102,12 +102,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             if (success.equals("1")) {
                                 for(int i = 0; i < jsonArray.length(); i++){
                                     JSONObject object = jsonArray.getJSONObject(i);
+                                    String ktp = object.getString("ktp").trim();
                                     String id_user = object.getString("id_user").trim();
                                     String username = object.getString("username").trim();
                                     String foto_user = object.getString("foto_user").trim();
 
-                                    sessionManager.createSession(id_user,username,foto_user);
+                                    sessionManager.createSession(ktp,id_user,username,foto_user);
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.putExtra("ktp",ktp);
                                     intent.putExtra("id_user",id_user);
                                     intent.putExtra("username",username);
                                     intent.putExtra("foto_user",foto_user);
