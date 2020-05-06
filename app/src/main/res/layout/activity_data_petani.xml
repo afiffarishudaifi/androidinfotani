@@ -39,61 +39,96 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/ktp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint=""
+                        android:hint="KTP"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/alamat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint=""
+                        android:hint="Alamat"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/spinner_desa"
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/bgtext"
+                        android:layout_margin="10dp"
+                        android:hint="Desa"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"/>
+<!--                    <TextView-->
+<!--                        android:id="@+id/spHasil"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:background="@drawable/bgtext"-->
+<!--                        android:gravity="center"-->
+<!--                        android:hint="Desa"-->
+<!--                        android:inputType="text" />-->
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                    <EditText
+                        android:id="@+id/nohp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint=""
+                        android:hint="No HP"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/komoditas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint=""
+                        android:hint="Komoditas"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/tglpanen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint=""
+                        android:hint="Tanggal Panen"
                         android:inputType="text" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:text="*Format: YYY-MM-DD (2020-02-20)"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
@@ -105,20 +140,20 @@
                     android:orientation="horizontal">
                 </LinearLayout>
                 <ProgressBar
-                    android:id="@+id/loading"
+                    android:id="@+id/loadingPetani"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:visibility="gone"/>
                 <LinearLayout
-                    android:id="@+id/linearLayoutBtn"
+                    android:id="@+id/linearLayoutBtnpetani"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_gravity="center">
                     <ImageButton
-                        android:id="@+id/imgBtnsimpan"
+                        android:id="@+id/imgBtnpetanisimpan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
@@ -128,7 +163,7 @@
                         android:background="@drawable/bgmasuk"
                         android:src="@drawable/simpan"/>
                     <ImageButton
-                        android:id="@+id/imgHapus"
+                        android:id="@+id/imgBtnpetanikeluar"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
