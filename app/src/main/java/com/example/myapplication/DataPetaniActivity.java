@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,7 +31,6 @@ import com.example.myapplication.Adapter.AdapterDesa;
 import com.example.myapplication.Adapter.AdapterKomoditas;
 import com.example.myapplication.Model.DataDesa;
 import com.example.myapplication.Model.DataKomoditas;
-import com.example.myapplication.Util.AppController;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +47,9 @@ import java.util.Map;
 public class DataPetaniActivity extends AppCompatActivity implements View.OnClickListener {
     private String URL_DATA_PETANI;
     private EditText ktp, alamat, nohp;
-    private TextView tglpanen;
+    private TextView tglpanen,nama_desa, nama_komoditas;
+    private String dnamaDesa, dnamaKomoditas;
+    private String didDesa ="0", didKomoditas="0";
     private ImageButton imgBtnpetanisimpan, imgBtnpetanikeluar;
     private LinearLayout linearLayoutBtnpetani;
     private ProgressBar loadingPetani, loadingSpinnerDesa, loadingSpinnerKomoditas;
@@ -107,11 +107,20 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // TODO Auto-generated method stub
-                temp_id_desa = listDesa.get(position).getIdDesa();
+                if(position <= 0){
+                    if(!didDesa.equals("0")) {
+                        temp_id_desa = didDesa;
+                        nama_desa.setText(dnamaDesa);
+                    }
+                }else {
+                    temp_id_desa = listDesa.get(position).getIdDesa();
+                    nama_desa.setText(listDesa.get(position).getNamaDesa());
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
+
             }
         });
         adapter_desa = new AdapterDesa(DataPetaniActivity.this, listDesa);
@@ -125,7 +134,15 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // TODO Auto-generated method stub
-                temp_id_komoditas = listKomoditas.get(position).getIdKomoditas();
+                if(position <= 0){
+                    if(!didKomoditas.equals("0")) {
+                        temp_id_komoditas = didKomoditas;
+                        nama_komoditas.setText(dnamaKomoditas);
+                    }
+                }else {
+                    temp_id_komoditas = listKomoditas.get(position).getIdKomoditas();
+                    nama_komoditas.setText(listKomoditas.get(position).getNamaKomoditas());
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -150,6 +167,8 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
         alamat =(EditText) findViewById(R.id.alamat);
         nohp =(EditText) findViewById(R.id.nohp);
         tglpanen =(TextView) findViewById(R.id.tglpanen);
+        nama_desa = (TextView) findViewById(R.id.nama_desa);
+        nama_komoditas = (TextView) findViewById(R.id.nama_komoditas);
         imgBtnpetanisimpan = (ImageButton) findViewById(R.id.imgBtnpetanisimpan);
         imgBtnpetanisimpan.setOnClickListener(this);
         imgBtnpetanikeluar = (ImageButton) findViewById(R.id.imgBtnpetanikeluar);
@@ -414,11 +433,18 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
                                         String dNohp = object.getString("nohp").trim();
                                         String dKomoditas = object.getString("komoditas").trim();
                                         String dTglpanen = object.getString("tglpanen").trim();
+                                        String dnDesa = object.getString("nama_desa").trim();
+                                        String dnKomoditas = object.getString("nama_komoditas").trim();
 
+                                        dnamaDesa = dnDesa;
+                                        dnamaKomoditas = dnKomoditas;
+                                        didDesa = dDesa;
+                                        didKomoditas = dKomoditas;
                                         ktp.setText(dKtp);
                                         alamat.setText(dAlamat);
                                         nohp.setText(dNohp);
                                         tglpanen.setText(dTglpanen);
+
                                     }
                                 }
                             } catch (JSONException e) {
