@@ -62,4 +62,12 @@ public class SessionManager {
         context.startActivity(kembaliLogin);
         ((MainActivity)context).finish();
     }
+    //dipakai saat input data petani pertama kali
+    public void loginKembali(){
+        editor.clear();
+        editor.commit();
+        Intent kembaliLogin = new Intent(context, LoginActivity.class);
+        context.startActivity(kembaliLogin);
+        ((DataPetaniActivity)context).finish();
+    }
 }

@@ -191,8 +191,13 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            Toast.makeText(DataPetaniActivity.this, "Pesan : " + jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                            loadingPetani.setVisibility(View.GONE);
+                            String success = jsonObject.getString("success");
+                            if(success.equals("1")){
+                                Toast.makeText(DataPetaniActivity.this, "Pesan : " + jsonObject.getString("message")+"\nMungkin anda harus masuk kembali", Toast.LENGTH_SHORT).show();
+                            sessionManager.loginKembali();
+                            }else {
+                                Toast.makeText(DataPetaniActivity.this, "Pesan : " + jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            }loadingPetani.setVisibility(View.GONE);
                             linearLayoutBtnpetani.setVisibility(View.VISIBLE);
 
                         } catch (JSONException e) {
