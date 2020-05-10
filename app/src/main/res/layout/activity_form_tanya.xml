@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/backgroundhijau"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -12,9 +12,9 @@
         android:id="@+id/loginpetani"
         android:contentDescription="@string/login_petani"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/formpertanyaan"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -23,18 +23,15 @@
             android:id="@+id/formlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@drawable/bgform1">
+            android:background="@drawable/bagianpertanyaan">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="130dp">
+                android:orientation="vertical">
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">

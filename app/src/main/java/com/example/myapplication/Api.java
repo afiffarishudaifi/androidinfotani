@@ -1,12 +1,12 @@
 package com.example.myapplication;
 
 public class Api {
-    String URL_LOGIN = "http://192.168.43.171/ciinfotani/android/loginapi";
-    String URL_REGIST = "http://192.168.43.171/ciinfotani/android/registerapi";
-    String URL_DESA = "http://192.168.43.171/ciinfotani/android/get_desa";
-    String URL_KOMODITAS = "http://192.168.43.171/ciinfotani/android/get_komoditas";
-    String URL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/data_petaniapi";
-    String URL_FILL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/fill_data";
+    String URL_LOGIN = "http://192.168.43.1/ciinfotani/android/loginapi";
+    String URL_REGIST = "http://192.168.43.1/ciinfotani/android/registerapi";
+    String URL_DESA = "http://192.168.43.1/ciinfotani/android/get_desa";
+    String URL_KOMODITAS = "http://192.168.43.1/ciinfotani/android/get_komoditas";
+    String URL_DATA_PETANI = "http://192.168.43.1/ciinfotani/android/data_petaniapi";
+    String URL_FILL_DATA_PETANI = "http://192.168.43.1/ciinfotani/android/fill_data";
 
     public String getURL_LOGIN() {
         return URL_LOGIN;

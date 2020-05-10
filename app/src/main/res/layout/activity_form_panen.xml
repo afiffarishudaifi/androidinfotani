@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/backgroundhijau"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/login_petani"
-        android:src="@drawable/datadiripetani" />
+        android:src="@drawable/formdatapanen" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,11 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@drawable/bgform1">
+            android:background="@drawable/bagianformpanen">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

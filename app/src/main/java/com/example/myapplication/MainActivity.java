@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        String mId_user = user.get(sessionManager.ID_USER);
         String mUsername = user.get(sessionManager.USERNAME);
         String mFoto_user = user.get(sessionManager.FOTO_USER);
-        String URL_FOTO = "http://192.168.43.171/ciinfotani/img/user/"+mFoto_user;
+        String URL_FOTO = "http://192.168.42.17/ciinfotani/img/user/"+mFoto_user;
 
         //set nama dari session
         username.setText(mUsername);
