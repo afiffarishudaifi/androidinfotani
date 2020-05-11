@@ -115,7 +115,9 @@ public class FormPanenActivity extends AppCompatActivity implements View.OnClick
                                 Toast.makeText(FormPanenActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
                                 loadingPanen.setVisibility(View.GONE);
                                 linearLayoutBtnPanen.setVisibility(View.VISIBLE);
-                                startActivity(new Intent(FormPanenActivity.this, MainActivity.class));
+                                Intent intent = new Intent(FormPanenActivity.this, MainActivity.class);
+                                intent.putExtra("kondisi","1");
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(FormPanenActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
                                 loadingPanen.setVisibility(View.GONE);

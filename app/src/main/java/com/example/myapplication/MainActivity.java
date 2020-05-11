@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String URL_CEK_PANEN;
 
-    public static final int NOTIFICATION_ID = 1;
-
     private String mId_user, mUsername, mFoto_user, mKtp, URL_FOTO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //. LOAD GAMBAR SAAT TERJADI KESALAHAN MEMUAT GMBR UTAMA
                 .error(R.drawable.ic_person_white_24dp)
                 .into(fotoUser);
-    cek_panen();
+            cek_panen();
     }
 
     private void initControl() {
