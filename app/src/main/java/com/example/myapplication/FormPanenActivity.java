@@ -109,10 +109,18 @@ public class FormPanenActivity extends AppCompatActivity implements View.OnClick
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            Toast.makeText(FormPanenActivity.this, "Pesan : " + jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-
-                            loadingPanen.setVisibility(View.GONE);
-                            linearLayoutBtnPanen.setVisibility(View.VISIBLE);
+                            String success = jsonObject.getString("success");
+                            String message = jsonObject.getString("message");
+                            if(success.equals("1")) {
+                                Toast.makeText(FormPanenActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                                loadingPanen.setVisibility(View.GONE);
+                                linearLayoutBtnPanen.setVisibility(View.VISIBLE);
+                                startActivity(new Intent(FormPanenActivity.this, MainActivity.class));
+                            }else{
+                                Toast.makeText(FormPanenActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                                loadingPanen.setVisibility(View.GONE);
+                                linearLayoutBtnPanen.setVisibility(View.VISIBLE);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -121,7 +129,6 @@ public class FormPanenActivity extends AppCompatActivity implements View.OnClick
                             loadingPanen.setVisibility(View.GONE);
                             linearLayoutBtnPanen.setVisibility(View.VISIBLE);
                         }
-                        startActivity(new Intent(FormPanenActivity.this, MainActivity.class));
                     }
                 },
                 new Response.ErrorListener() {
