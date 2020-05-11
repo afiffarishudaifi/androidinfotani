@@ -53,12 +53,13 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
     private ImageButton imgBtnpetanisimpan, imgBtnpetanikeluar;
     private LinearLayout linearLayoutBtnpetani;
     private ProgressBar loadingPetani, loadingSpinnerDesa, loadingSpinnerKomoditas;
-    private SessionManager sessionManager;
+
 
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
 
     //session deklar
+    private SessionManager sessionManager;
     private String mId_user, mUsername, mKtp, URL_FILL_DATA_PETANI;
 
     //spinner desa

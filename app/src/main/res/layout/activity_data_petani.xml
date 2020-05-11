@@ -43,6 +43,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
+                        android:layout_gravity=""
                         android:hint="KTP"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
