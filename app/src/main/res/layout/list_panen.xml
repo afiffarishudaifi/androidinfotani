@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:weightSum="6"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtNo"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/hitam"/>
+    <TextView
+        android:id="@+id/txtKomoditas"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/hitam"/>
+    <TextView
+        android:id="@+id/txtTgl"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/hitam"/>
+    <TextView
+        android:id="@+id/txtHasilawal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/hitam"/>
+    <TextView
+        android:id="@+id/txtHasilsisa"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/hitam"/>
+    <TextView
+        android:id="@+id/txtHarga"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/abu"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        tools:ignore="RtlCompat,SmallSp" />
+</LinearLayout>

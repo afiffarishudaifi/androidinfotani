@@ -7,4 +7,6 @@
     <color name="backgroundlogin">#a1c8a8</color>
     <color name="transparant">#00000000</color>
     <color name="putih">#FFFFFF</color>
+    <color name="abu">#A39F9F</color>
+    <color name="hitam">#201F1F</color>
 </resources>
