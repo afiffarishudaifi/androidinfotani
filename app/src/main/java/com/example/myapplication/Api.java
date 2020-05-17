@@ -10,6 +10,7 @@ public class Api {
     private String URL_PANEN = "http://192.168.43.171/ciinfotani/android/data_panenapi";
     private String URL_FILL_DATA_PANEN = "http://192.168.43.171/ciinfotani/android/fill_data_panen";
     private String URL_CEK_PANEN = "http://192.168.43.171/ciinfotani/android/cek_panen";
+    private String URL_LAP_PANEN = "http://192.168.43.171/ciinfotani/android/lap_panen";
 
     public String getURL_LOGIN() {
         return URL_LOGIN;
@@ -28,5 +29,5 @@ public class Api {
     public String getURL_PANEN() { return URL_PANEN; }
     public String getURL_FILL_DATA_PANEN() { return URL_FILL_DATA_PANEN; }
     public String getURL_CEK_PANEN() { return URL_CEK_PANEN; }
-
+    public String getURL_LAP_PANEN() { return URL_LAP_PANEN; }
 }
