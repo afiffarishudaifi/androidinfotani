@@ -3,19 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_gravity="center"
     android:orientation="vertical">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:weightSum="6"
         android:orientation="horizontal">
 
     <TextView
         android:id="@+id/txtNo"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@color/abu"
@@ -28,8 +25,7 @@
         android:background="@color/hitam"/>
     <TextView
         android:id="@+id/txtKomoditas"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:background="@color/abu"
@@ -42,8 +38,7 @@
         android:background="@color/hitam"/>
     <TextView
         android:id="@+id/txtTgl"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@color/abu"
@@ -56,12 +51,11 @@
         android:background="@color/hitam"/>
     <TextView
         android:id="@+id/txtHasilawal"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="70dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
+        android:gravity="right"
         android:background="@color/abu"
-        android:textAlignment="center"
         android:textSize="12sp"
         tools:ignore="RtlCompat" />
     <View
@@ -70,12 +64,11 @@
         android:background="@color/hitam"/>
     <TextView
         android:id="@+id/txtHasilsisa"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="70dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
+        android:gravity="right"
         android:background="@color/abu"
-        android:textAlignment="center"
         android:textSize="12sp"
         tools:ignore="RtlCompat" />
     <View
@@ -84,12 +77,11 @@
         android:background="@color/hitam"/>
     <TextView
         android:id="@+id/txtHarga"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="80dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
+        android:gravity="left"
         android:background="@color/abu"
-        android:textAlignment="center"
         android:textSize="12sp"
         tools:ignore="RtlCompat" />
     </LinearLayout>
