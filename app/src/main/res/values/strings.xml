@@ -15,4 +15,12 @@
     <string name="pilih_foto">Pilih...</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
     <string name="tanggal_panen">Tanggal Panen</string>
+
+    <string-array name="tahun">
+        <item>Pilih Tahun</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+    </string-array>
 </resources>

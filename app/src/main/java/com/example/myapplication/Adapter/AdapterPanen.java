@@ -54,9 +54,9 @@ public class AdapterPanen extends RecyclerView.Adapter<AdapterPanen.PanenViewHol
             holder.txtNo.setText(temItem.getNo() + "");
         }
             holder.txtKomoditas.setText(temItem.getKomoditas());
-            holder.txtHasilawal.setText(temItem.getHasil());
-            holder.txtHasilsisa.setText(temItem.getSisa());
-            holder.txtHarga.setText(temItem.getHarga());
+            holder.txtHasilawal.setText(temItem.getHasil()+" Kg");
+            holder.txtHasilsisa.setText(temItem.getSisa()+" Kg");
+            holder.txtHarga.setText("Rp "+temItem.getHarga());
             holder.txtTgl.setText(temItem.getTglPanen());
 
         holder.txtNo.setBackgroundResource(R.color.abu);

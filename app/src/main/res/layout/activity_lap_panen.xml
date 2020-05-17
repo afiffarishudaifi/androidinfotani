@@ -41,6 +41,7 @@
                 android:id="@+id/spinner_tahun"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:entries="@array/tahun"
                 android:background="@drawable/bgtext" />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,6 +113,14 @@
                         android:textStyle="bold"
                         android:text="Kg"/>
                 </LinearLayout>
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvTabel"
                     android:layout_marginTop="30dp"
@@ -119,6 +128,8 @@
                     android:layout_height="match_parent"
                     tools:listitem="@layout/list_panen"
                     />
+                </LinearLayout>
+                </HorizontalScrollView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
