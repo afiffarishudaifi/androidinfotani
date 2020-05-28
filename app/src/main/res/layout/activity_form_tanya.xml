@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundhijau"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:id="@+id/linearLayoutBtnTanya">
 
     <ImageView
         android:id="@+id/loginpetani"
@@ -16,11 +17,18 @@
         android:layout_height="29dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/formpertanyaan"/>
+    <ProgressBar
+        android:id="@+id/loadingTanya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:visibility="gone"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:id="@+id/formlogin"
+            android:id="@+id/formpesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -36,36 +44,40 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/namatanya"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:inputType="text" />
+                        android:layout_gravity=""
+                        android:hint="Nama" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    app:passwordToggleEnabled="true">
+                    android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/emailtanya"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:inputType="text" />
+                        android:layout_gravity=""
+                        android:hint="email" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    app:passwordToggleEnabled="true">
+                    android:layout_width="wrap_content">
                     <EditText
+                        android:id="@+id/pesantanya"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:inputType="text" />
+                        android:layout_gravity=""
+                        android:hint="Pesan" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <ProgressBar
@@ -82,7 +94,7 @@
                     android:orientation="horizontal"
                     android:layout_gravity="center">
                     <ImageButton
-                        android:id="@+id/imgBtnsimpan"
+                        android:id="@+id/imgBtnsimpanpesan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
@@ -92,7 +104,7 @@
                         android:background="@drawable/bgmasuk"
                         android:src="@drawable/simpan"/>
                     <ImageButton
-                        android:id="@+id/imgBtnkeluar"
+                        android:id="@+id/imgBtnkeluarpesan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"

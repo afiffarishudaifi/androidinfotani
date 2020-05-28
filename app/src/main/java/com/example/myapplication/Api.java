@@ -1,17 +1,20 @@
 package com.example.myapplication;
 
 public class Api {
-    private String URL_LOGIN = "http://192.168.43.171/ciinfotani/android/loginapi";
-    private String URL_REGIST = "http://192.168.43.171/ciinfotani/android/registerapi";
-    private String URL_DESA = "http://192.168.43.171/ciinfotani/android/get_desa";
-    private String URL_KOMODITAS = "http://192.168.43.171/ciinfotani/android/get_komoditas";
-    private String URL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/data_petaniapi";
-    private String URL_FILL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/fill_data";
-    private String URL_PANEN = "http://192.168.43.171/ciinfotani/android/data_panenapi";
-    private String URL_FILL_DATA_PANEN = "http://192.168.43.171/ciinfotani/android/fill_data_panen";
-    private String URL_CEK_PANEN = "http://192.168.43.171/ciinfotani/android/cek_panen";
-    private String URL_LAP_PANEN = "http://192.168.43.171/ciinfotani/android/lap_panen";
-    private String URL_LAP_PANEN_TAHUN = "http://192.168.43.171/ciinfotani/android/lap_panenTahun";
+    private String URL_LOGIN = "http://192.168.42.168/ciinfotani/android/loginapi";
+    private String URL_REGIST = "http://192.168.42.168/ciinfotani/android/registerapi";
+    private String URL_DESA = "http://192.168.42.168/ciinfotani/android/get_desa";
+    private String URL_KOMODITAS = "http://192.168.42.168/ciinfotani/android/get_komoditas";
+    private String URL_DATA_PETANI = "http://192.168.42.168/ciinfotani/android/data_petaniapi";
+    private String URL_FILL_DATA_PETANI = "http://192.168.42.168/ciinfotani/android/fill_data";
+    private String URL_PANEN = "http://192.168.42.168/ciinfotani/android/data_panenapi";
+    private String URL_FILL_DATA_PANEN = "http://192.168.42.168/ciinfotani/android/fill_data_panen";
+    private String URL_CEK_PANEN = "http://192.168.42.168/ciinfotani/android/cek_panen";
+    private String URL_LAP_PANEN = "http://192.168.42.168/ciinfotani/android/lap_panen";
+    private String URL_LAP_PANEN_TAHUN = "http://192.168.42.168/ciinfotani/android/lap_panenTahun";
+    private String URL_TANYA = "http://192.168.42.168/ciinfotani/android/tanya";
+    private String URL_UPDATE = "http://192.168.42.168/ciinfotani/android/update_petani";
+    private String URL_CARI = "http://192.168.42.168/ciinfotani/android/passpetani";
 
 
     public String getURL_LOGIN() {
@@ -33,6 +36,15 @@ public class Api {
     public String getURL_CEK_PANEN() { return URL_CEK_PANEN; }
     public String getURL_LAP_PANEN() { return URL_LAP_PANEN; }
     public String getURL_LAP_PANEN_TAHUN() { return URL_LAP_PANEN_TAHUN; }
+    public String getURL_TANYA() {
+        return URL_TANYA;
+    }
+    public String getURL_CARI() {
+        return URL_CARI;
+    }
+    public String getURL_UPDATE() {
+        return URL_UPDATE;
+    }
 
 
 }
