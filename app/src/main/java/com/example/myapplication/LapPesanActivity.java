@@ -202,7 +202,7 @@ public class LapPesanActivity extends AppCompatActivity implements View.OnClickL
 //                                pesanItems.add(new ModelPanen(no,komoditas,hasil,sisa,tglPanen,harga));
 //                                no++;
                             }
-                            dRecycle = findViewById(R.id.rvTabelPesan);
+                            dRecycle = findViewById(R.id.rvTabelPesanLap);
                             dRecycle.setHasFixedSize(true);
                             dLayoutManager = new LinearLayoutManager(getApplicationContext());
                             dAdapter = new AdapterPesan((pesanItems));
