@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    private ImageButton imgBtnmasuk, imgBtnkeluar, imgBtndaftar;
+    private ImageButton imgBtnmasuk, imgBtnkeluar, imgBtndaftar, imgBtnReset;
     private EditText etusername, etpassword;
 
     private ProgressBar loading;
@@ -61,6 +61,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         imgBtnkeluar.setOnClickListener(this);
         imgBtndaftar = (ImageButton) findViewById(R.id.imgBtndaftar);
         imgBtndaftar.setOnClickListener(this);
+        imgBtnReset = (ImageButton)findViewById(R.id.lupaakun);
+        imgBtnReset.setOnClickListener(this);
     }
 
     @Override
@@ -82,6 +84,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.imgBtndaftar:
                 startActivity(new Intent(mContext, RegisterActivity.class));
+                finish();
+                break;
+            case R.id.lupaakun:
+                startActivity(new Intent(mContext, ResetPassword.class));
                 finish();
                 break;
         }

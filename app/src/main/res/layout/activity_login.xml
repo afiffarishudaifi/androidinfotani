@@ -124,13 +124,24 @@
                 android:background="@drawable/bgkeluar"
                 android:src="@drawable/keluar"/>
         </LinearLayout>
+                <ImageButton
+                    android:layout_margin="5dp"
+                    android:id="@+id/lupaakun"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/imgbtndaftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparant"
+                    android:src="@drawable/lupaakun"/>
             </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp">
