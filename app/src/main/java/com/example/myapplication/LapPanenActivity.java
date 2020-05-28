@@ -154,6 +154,7 @@ public class LapPanenActivity extends AppCompatActivity implements View.OnClickL
                 }
                 break;
             case R.id.hapusLappanen:
+                list.setSelection(0);
                 getPanenList();
                 break;
         }

@@ -186,8 +186,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             String success = jsonObject.getString("success");
                             String message = jsonObject.getString("message");
                             if(success.equals("1")) {
-                                Toast.makeText(MainActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
-                                showNotif();
+                                String donepanen = jsonObject.getString("donepanen");
+                                String donemessage = jsonObject.getString("donemessage");
+                                if(donepanen.equals("1")) {
+                                    Toast.makeText(MainActivity.this, "Pesan : " + donemessage, Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(MainActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, "Pesan : " + donemessage, Toast.LENGTH_LONG).show();
+                                    showNotif();
+                                }
                             }else{
                                 Toast.makeText(MainActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
                             }
