@@ -16,11 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".KonfirmasiPesananActivity"></activity>
+        <activity android:name=".KonfirmasiPesananActivity"
+            android:parentActivityName=".RiwayatPesanActivity"></activity>
         <activity android:name=".PasswordBaruActivity" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".FormTanyaActivity" />
-        <activity android:name=".RiwayatPesanActivity" />
+        <activity android:name=".RiwayatPesanActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".LapPesanActivity" />
         <activity android:name=".LapPanenActivity" />
         <activity android:name=".FormPanenActivity" />
