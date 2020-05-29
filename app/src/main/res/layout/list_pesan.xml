@@ -8,7 +8,7 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:orientation="horizontal">
 
     <TextView
@@ -25,6 +25,19 @@
         android:layout_height="match_parent"
         android:background="@color/hitam"/>
         <TextView
+            android:id="@+id/txtIdP"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@color/abu"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            tools:ignore="RtlCompat" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/hitam"/>
+        <TextView
             android:id="@+id/txtNamaP"
             android:layout_width="100dp"
             android:layout_height="match_parent"
@@ -40,7 +53,7 @@
     <TextView
         android:id="@+id/txtKomoditasP"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@color/abu"
         android:textAlignment="center"

@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".Util.AppController"
         android:allowBackup="true"
@@ -11,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PasswordBaruActivity"></activity>
+        <activity android:name=".KonfirmasiPesananActivity"></activity>
+        <activity android:name=".PasswordBaruActivity" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".FormTanyaActivity" />
         <activity android:name=".RiwayatPesanActivity" />
@@ -32,10 +38,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

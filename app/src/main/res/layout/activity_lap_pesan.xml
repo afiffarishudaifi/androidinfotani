@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundhijau"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LapPesanActivity">
 
     <ImageView
         android:id="@+id/loginpetani"
@@ -96,6 +96,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvTabelPesanLap"
                         android:layout_marginTop="30dp"
+                        android:clickable="false"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         tools:listitem="@layout/list_pesan"

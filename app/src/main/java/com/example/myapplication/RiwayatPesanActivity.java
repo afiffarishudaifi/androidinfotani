@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,7 @@ import java.util.Map;
 
 public class RiwayatPesanActivity extends AppCompatActivity implements View.OnClickListener {
     private String URL_RIW_PESAN, URL_RIW_PESAN_TAHUN;
-    private String status="2";
+    private String status="1";
 
     //session deklar
     private SessionManager sessionManager;
@@ -45,10 +46,11 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
     private RecyclerView.LayoutManager dLayoutManager;
 
     private int no =0;
-    private String  namaP, komoditasP ,tglPesanP,jmlP,biayaP,statusP;
+    private String  namaP, komoditasP ,tglPesanP,jmlP,biayaP,statusP,idPesan;
     private TextView jmlPesan;
     private Button pilih, hapus;
     private Spinner list;
+    private ArrayList<ModelPesan> list_a = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
 
         dQueue = Volley.newRequestQueue(this);
         getPesanList();
+
     }
 
     @Override
@@ -115,10 +118,10 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
                                     jmlP = object.getString("jml_pesan").trim();
                                     biayaP = object.getString("tot_biaya").trim();
                                     statusP = object.getString("status").trim();
-                                    no = no;
+                                    idPesan = object.getString("id_pesan").trim();
 
                                     System.out.println(komoditasP);
-                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP));
+                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan));
                                     no++;
                                 }
                                 dRecycle = findViewById(R.id.rvTabelPesan);
@@ -186,10 +189,9 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
                                     jmlP = object.getString("jml_pesan").trim();
                                     biayaP = object.getString("tot_biaya").trim();
                                     statusP = object.getString("status").trim();
-                                    no = no;
 
                                     System.out.println(komoditasP);
-                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP));
+                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan));
                                     no++;
                                 }
                             }else{
