@@ -188,26 +188,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_gravity="center">
-                    <ImageButton
-                        android:id="@+id/imgBtnKonfPesan"
+                    <Button
+                        android:id="@+id/btnKonfPesan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="@string/btnmasuk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bgmasuk"
-                        android:src="@drawable/simpan"/>
-                    <ImageButton
-                        android:id="@+id/imgBtnTolakPesan"
+                        android:textColor="@color/putih"
+                        android:text="Konfirmasi"/>
+                    <Button
+                        android:id="@+id/btnTolakPesan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="@string/btnkeluar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bgkeluar"
-                        android:src="@drawable/keluar"/>
+                        android:textColor="@color/putih"
+                        android:text="Tolak" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout

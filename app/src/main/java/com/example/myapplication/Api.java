@@ -18,6 +18,7 @@ public class Api {
     private String URL_PESAN = "http://192.168.43.171/ciinfotani/android/pemesanan";
     private String URL_PESAN_TAHUN = "http://192.168.43.171/ciinfotani/android/pemesananTahun";
     private String URL_PESAN_KONF = "http://192.168.43.171/ciinfotani/android/konfirmasi_pemesanan";
+    private String URL_PESAN_TOLAK = "http://192.168.43.171/ciinfotani/android/tolak_pemesanan";
 
 
     public String getURL_LOGIN() { return URL_LOGIN; }
@@ -37,5 +38,6 @@ public class Api {
     public String getURL_PESAN() { return URL_PESAN; }
     public String getURL_PESAN_TAHUN() { return URL_PESAN_TAHUN; }
     public String getURL_PESAN_KONF() { return URL_PESAN_KONF; }
+    public String getURL_PESAN_TOLAK(){return URL_PESAN_TOLAK;}
 
 }

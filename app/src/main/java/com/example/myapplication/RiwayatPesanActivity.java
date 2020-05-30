@@ -46,7 +46,7 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
     private RecyclerView.LayoutManager dLayoutManager;
 
     private int no =0;
-    private String  namaP, komoditasP ,tglPesanP,jmlP,biayaP,statusP,idPesan;
+    private String  namaP, komoditasP ,tglPesanP,jmlP,biayaP,statusP,idPesan, idPanen;
     private TextView jmlPesan;
     private Button pilih, hapus;
     private Spinner list;
@@ -57,6 +57,7 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat_pesan);
 
+        Toast.makeText(RiwayatPesanActivity.this, "Klik Data Yang Ingin Dikonfirmasi/Dihapus!", Toast.LENGTH_SHORT).show();
         initControls();
         Api riwPesan = new Api();
         URL_RIW_PESAN = riwPesan.getURL_PESAN();
@@ -119,9 +120,10 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
                                     biayaP = object.getString("tot_biaya").trim();
                                     statusP = object.getString("status").trim();
                                     idPesan = object.getString("id_pesan").trim();
+                                    idPanen = object.getString("id_panen").trim();
 
                                     System.out.println(komoditasP);
-                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan));
+                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan,idPanen));
                                     no++;
                                 }
                                 dRecycle = findViewById(R.id.rvTabelPesan);
@@ -189,9 +191,10 @@ public class RiwayatPesanActivity extends AppCompatActivity implements View.OnCl
                                     jmlP = object.getString("jml_pesan").trim();
                                     biayaP = object.getString("tot_biaya").trim();
                                     statusP = object.getString("status").trim();
+                                    idPanen = object.getString("id_panen").trim();
 
                                     System.out.println(komoditasP);
-                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan));
+                                    pesanItems.add(new ModelPesan(no,namaP,komoditasP,tglPesanP,jmlP,biayaP,statusP,idPesan,idPanen));
                                     no++;
                                 }
                             }else{

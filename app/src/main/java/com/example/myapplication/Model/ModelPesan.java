@@ -2,9 +2,9 @@ package com.example.myapplication.Model;
 
 public class ModelPesan {
     private int no;
-    private String namaP, komoditasP, tglP, jmlP, biayaP, statusP,idPesan;
+    private String namaP, komoditasP, tglP, jmlP, biayaP, statusP,idPesan, idPanen;
 
-    public ModelPesan(int no, String namaP, String komoditasP, String tglP, String jmlP, String biayaP, String statusP, String idPesan) {
+    public ModelPesan(int no, String namaP, String komoditasP, String tglP, String jmlP, String biayaP, String statusP, String idPesan, String idPanen) {
         this.no = no;
         this.namaP = namaP;
         this.komoditasP = komoditasP;
@@ -13,6 +13,7 @@ public class ModelPesan {
         this.biayaP = biayaP;
         this.statusP = statusP;
         this.idPesan = idPesan;
+        this.idPanen = idPanen;
     }
 
     public int getNo() {
@@ -43,4 +44,5 @@ public class ModelPesan {
         return statusP;
     }
     public String getIdPesan(){return idPesan;}
+    public String getIdPanen(){return idPanen;}
 }

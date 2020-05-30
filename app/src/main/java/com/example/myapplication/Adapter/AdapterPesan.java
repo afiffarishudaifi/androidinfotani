@@ -93,9 +93,12 @@ public class AdapterPesan extends RecyclerView.Adapter<AdapterPesan.PesanViewHol
                     sendData.putExtra("tglPK", temItem.getTglP().trim());
                     sendData.putExtra("jmlPK", temItem.getJmlP().trim());
                     sendData.putExtra("biayaPK", temItem.getBiayaP().trim());
+                    sendData.putExtra("idPanenK", temItem.getIdPanen().trim());
                     context.startActivity(sendData);
                 }else{
-                    Toast.makeText(holder.itemView.getContext(), "Pergi Ke Riwayat Pesanan Untuk konfirmasi pesanan", Toast.LENGTH_SHORT).show();
+                    if(!status.equals("2")) {
+                        Toast.makeText(holder.itemView.getContext(), "Klik Data Pada Riwayat Pemesanan Untuk Konfirmasi Pesanan", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
