@@ -91,12 +91,6 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                                 Intent sendData1 = new Intent(ResetPassword.this, PasswordBaruActivity.class);
                                 sendData1.putExtra("hasil", hasil);
                                 startActivity(sendData1);
-
-                                /*Bundle setData = new Bundle();
-                                Intent sendData1 = new Intent(ResetPassword.this, PasswordBaruActivity.class);
-                                setData.putString("username", hasil);
-                                sendData1.putExtra(setData);
-                                startActivity(sendData1);*/
                             } else {
                                 Toast.makeText(ResetPassword.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
                                 /*loadingcari.setVisibility(View.GONE);
@@ -110,11 +104,6 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                             /*loadingcari.setVisibility(View.GONE);
                             linearLayout.setVisibility(View.VISIBLE);*/
                         }
-
-                        /*Intent sendData1 = new Intent(ResetPassword.this, PasswordBaruActivity.class);
-                        sendData1.putExtra("username", hasilusername);
-                        startActivity(sendData1);*/
-                        //startActivity(new Intent(ResetPassword.this, PasswordBaruActivity.class));
                     }
                 },
                 new Response.ErrorListener() {

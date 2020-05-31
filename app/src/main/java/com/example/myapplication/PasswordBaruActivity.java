@@ -97,6 +97,8 @@ public class PasswordBaruActivity extends AppCompatActivity implements View.OnCl
                                 finish();
                             } else {
                                 Toast.makeText(PasswordBaruActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                                loadingcari.setVisibility(View.GONE);
+                                linearLayout.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
