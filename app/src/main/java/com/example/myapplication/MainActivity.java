@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -44,7 +45,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView username, id_user;
     private ImageButton btnDatapetani, btnFormpanen, btnLappanen,
-            btnLappesan, btnRiwayatpesan, btnFormtanya, btnPengaturan;
+            btnLappesan, btnRiwayatpesan, btnFormtanya, btnPengaturan, btnLogout;
     private ImageView fotoUser;
     SessionManager sessionManager;
 
@@ -82,14 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //. LOAD GAMBAR SAAT TERJADI KESALAHAN MEMUAT GMBR UTAMA
                 .error(R.drawable.ic_person_white_24dp)
                 .into(fotoUser);
-            cek_panen();
+//            cek_panen();
     }
 
     private void initControl() {
         fotoUser = (ImageView) findViewById(R.id.foto_user);
         username = (TextView) findViewById(R.id.namaPengguna);
-//        btnLogout = (Button) findViewById(R.id.);
-//        btnLogout.setOnClickListener(this);
+        btnLogout = (ImageButton) findViewById(R.id.imgBtnLogout);
+        btnLogout.setOnClickListener(this);
         btnDatapetani = (ImageButton) findViewById(R.id.btnDatapetani);
         btnDatapetani.setOnClickListener(this);
         btnFormpanen = (ImageButton) findViewById(R.id.btnFormpanen);
@@ -110,6 +111,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgBtnpengaturan:
+                Intent toPengaturan = new Intent(MainActivity.this, PengaturanActivity.class);
+                startActivity(toPengaturan);
+                break;
+            case R.id.imgBtnLogout:
                 sessionManager.logout();
                 finish();
                 break;
