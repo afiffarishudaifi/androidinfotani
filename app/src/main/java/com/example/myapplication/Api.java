@@ -1,25 +1,25 @@
 package com.example.myapplication;
 
 public class Api {
-    private String URL_LOGIN = "http://192.168.42.152/ciinfotani/android/loginapi";
-    private String URL_REGIST = "http://192.168.42.152/ciinfotani/android/registerapi";
-    private String URL_DESA = "http://192.168.42.152/ciinfotani/android/get_desa";
-    private String URL_KOMODITAS = "http://192.168.42.152/ciinfotani/android/get_komoditas";
-    private String URL_DATA_PETANI = "http://192.168.42.152/ciinfotani/android/data_petaniapi";
-    private String URL_FILL_DATA_PETANI = "http://192.168.42.152/ciinfotani/android/fill_data";
-    private String URL_PANEN = "http://192.168.42.152/ciinfotani/android/data_panenapi";
-    private String URL_FILL_DATA_PANEN = "http://192.168.42.152/ciinfotani/android/fill_data_panen";
-    private String URL_CEK_PANEN = "http://192.168.42.152/ciinfotani/android/cek_panen";
-    private String URL_LAP_PANEN = "http://192.168.42.152/ciinfotani/android/lap_panen";
-    private String URL_LAP_PANEN_TAHUN = "http://192.168.42.152/ciinfotani/android/lap_panenTahun";
-    private String URL_TANYA = "http://192.168.42.152/ciinfotani/android/tanya";
-    private String URL_UPDATE = "http://192.168.42.152/ciinfotani/android/update_petani";
-    private String URL_CARI = "http://192.168.42.152/ciinfotani/android/passpetani";
-    private String URL_PESAN = "http://192.168.42.152/ciinfotani/android/pemesanan";
-    private String URL_PESAN_TAHUN = "http://192.168.42.152/ciinfotani/android/pemesananTahun";
-    private String URL_PESAN_KONF = "http://192.168.42.152/ciinfotani/android/konfirmasi_pemesanan";
-    private String URL_PESAN_TOLAK = "http://192.168.42.152/ciinfotani/android/tolak_pemesanan";
-
+    private String URL_LOGIN = "http://192.168.43.171/ciinfotani/android/loginapi";
+    private String URL_REGIST = "http://192.168.43.171/ciinfotani/android/registerapi";
+    private String URL_DESA = "http://192.168.43.171/ciinfotani/android/get_desa";
+    private String URL_KOMODITAS = "http://192.168.43.171/ciinfotani/android/get_komoditas";
+    private String URL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/data_petaniapi";
+    private String URL_FILL_DATA_PETANI = "http://192.168.43.171/ciinfotani/android/fill_data";
+    private String URL_PANEN = "http://192.168.43.171/ciinfotani/android/data_panenapi";
+    private String URL_FILL_DATA_PANEN = "http://192.168.43.171/ciinfotani/android/fill_data_panen";
+    private String URL_CEK_PANEN = "http://192.168.43.171/ciinfotani/android/cek_panen";
+    private String URL_LAP_PANEN = "http://192.168.43.171/ciinfotani/android/lap_panen";
+    private String URL_LAP_PANEN_TAHUN = "http://192.168.43.171/ciinfotani/android/lap_panenTahun";
+    private String URL_TANYA = "http://192.168.43.171/ciinfotani/android/tanya";
+    private String URL_UPDATE = "http://192.168.43.171/ciinfotani/android/update_petani";
+    private String URL_CARI = "http://192.168.43.171/ciinfotani/android/passpetani";
+    private String URL_PESAN = "http://192.168.43.171/ciinfotani/android/pemesanan";
+    private String URL_PESAN_TAHUN = "http://192.168.43.171/ciinfotani/android/pemesananTahun";
+    private String URL_PESAN_KONF = "http://192.168.43.171/ciinfotani/android/konfirmasi_pemesanan";
+    private String URL_PESAN_TOLAK = "http://192.168.43.171/ciinfotani/android/tolak_pemesanan";
+    private String URL_UBAH_PENGATURAN = "http://192.168.43.171/ciinfotani/android/pengaturan";
 
     public String getURL_LOGIN() { return URL_LOGIN; }
     public String getURL_REGIST() { return URL_REGIST; }
@@ -39,5 +39,5 @@ public class Api {
     public String getURL_PESAN_TAHUN() { return URL_PESAN_TAHUN; }
     public String getURL_PESAN_KONF() { return URL_PESAN_KONF; }
     public String getURL_PESAN_TOLAK(){return URL_PESAN_TOLAK;}
-
+    public String getURL_UBAH_PENGATURAN(){return URL_UBAH_PENGATURAN;}
 }

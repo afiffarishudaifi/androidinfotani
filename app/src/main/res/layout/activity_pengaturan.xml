@@ -33,97 +33,63 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="130dp">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:id="@+id/pFotouser"
+                    android:layout_gravity="center"
+                    android:src="@drawable/user"/>
+                <Button
+                    android:id="@+id/pBtnFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Pilih Foto"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="10dp"
+                    tools:ignore="SmallSp"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="KTP"
-                        android:textSize="11sp"
-                        android:layout_height="wrap_content"
-                        tools:ignore="SmallSp" />
-                    <TextView
-                        android:id="@+id/ktpPanen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bgtext"
-                        android:gravity="center"
-                        android:text="KTP" />
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="Komoditas"
-                        android:textSize="11sp"
-                        android:layout_height="wrap_content"
-                        tools:ignore="SmallSp" />
-                    <TextView
-                        android:id="@+id/komoditasPanen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bgtext"
-                        android:gravity="center"
-                        android:hint="Komoditas" />
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:text="Tanggal Panen"
-                        android:textSize="11sp"
-                        android:layout_height="wrap_content"
-                        tools:ignore="SmallSp" />
-                    <TextView
-                        android:id="@+id/tglpanenPanen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/bgtext"
-                        android:gravity="center"
-                        android:hint="Tanggal Panen" />
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    android:layout_width="wrap_content"
+                    app:passwordToggleEnabled="true">
                     <EditText
-                        android:id="@+id/hasilPanen"
+                        android:id="@+id/pPasswordlama"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Hasil/Jumlah Panen (Kg)"
-                        android:inputType="numberDecimal" />
+                        android:hint="Katasandi Lama*"
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    android:layout_width="wrap_content"
+                    app:passwordToggleEnabled="true">
                     <EditText
-                        android:id="@+id/hargaPanen"
+                        android:id="@+id/pPasswordbaru"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Harga/Kg (Rp)"
-                        android:inputType="numberDecimal" />
+                        android:hint="Katasandi Baru(ops)"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:passwordToggleEnabled="true">
+                    <EditText
+                        android:id="@+id/pPasswordbarukonf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bgtext"
+                        android:gravity="center"
+                        android:hint="Konfirmasi Katasandi Baru(Ops)"
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
@@ -135,7 +101,7 @@
                     android:orientation="horizontal">
                 </LinearLayout>
                 <ProgressBar
-                    android:id="@+id/loadingPengaturan"
+                    android:id="@+id/ploadingPengaturan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
@@ -148,7 +114,7 @@
                     android:orientation="horizontal"
                     android:layout_gravity="center">
                     <ImageButton
-                        android:id="@+id/imgBtnsimpanPanen"
+                        android:id="@+id/pimgBtnsimpan"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
@@ -158,7 +124,7 @@
                         android:background="@drawable/bgmasuk"
                         android:src="@drawable/simpan"/>
                     <ImageButton
-                        android:id="@+id/imgBtnKeluarPanen"
+                        android:id="@+id/pimgBtnKeluar"
                         android:layout_margin="5dp"
                         android:clickable="true"
                         android:focusable="true"
