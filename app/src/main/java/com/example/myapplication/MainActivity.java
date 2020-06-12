@@ -60,11 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Api main = new Api();
         URL_CEK_PANEN = main.getURL_CEK_PANEN();
 
-        sessionManager = new SessionManager(this);
-        sessionManager.checkLogin();
-
         initControl();
 
+        sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
         HashMap<String, String> user = sessionManager.getUserDetail();
         mId_user = user.get(sessionManager.ID_USER);
         mUsername = user.get(sessionManager.USERNAME);

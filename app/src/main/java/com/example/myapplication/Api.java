@@ -20,6 +20,7 @@ public class Api {
     private String URL_PESAN_KONF = "http://192.168.43.171/ciinfotani/android/konfirmasi_pemesanan";
     private String URL_PESAN_TOLAK = "http://192.168.43.171/ciinfotani/android/tolak_pemesanan";
     private String URL_UBAH_PENGATURAN = "http://192.168.43.171/ciinfotani/android/pengaturan";
+    private String URL_UBAH_FOTO = "http://192.168.43.171/ciinfotani/android/update_foto";
 
     public String getURL_LOGIN() { return URL_LOGIN; }
     public String getURL_REGIST() { return URL_REGIST; }
@@ -40,4 +41,6 @@ public class Api {
     public String getURL_PESAN_KONF() { return URL_PESAN_KONF; }
     public String getURL_PESAN_TOLAK(){return URL_PESAN_TOLAK;}
     public String getURL_UBAH_PENGATURAN(){return URL_UBAH_PENGATURAN;}
+    public String getURL_UBAH_FOTO(){return URL_UBAH_FOTO;}
+
 }

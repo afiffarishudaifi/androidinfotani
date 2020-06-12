@@ -40,15 +40,42 @@
                     android:id="@+id/pFotouser"
                     android:layout_gravity="center"
                     android:src="@drawable/user"/>
+                <ProgressBar
+                    android:id="@+id/ploadingFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:visibility="gone"/>
+                <LinearLayout
+                    android:id="@+id/linearLayoutBtnUpdateFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
                 <Button
                     android:id="@+id/pBtnFoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="Pilih Foto"
+                    android:layout_gravity="center"
                     android:textSize="11sp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="5dp"
                     tools:ignore="SmallSp"/>
+                <Button
+                    android:id="@+id/pBtnUpdateFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="10sp"
+                    android:text="Update Foto"
+                    android:layout_margin="5dp"
+                    tools:ignore="SmallSp"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Form ganti katasandi"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -60,7 +87,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Katasandi Lama*"
+                        android:hint="Katasandi Lama"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +101,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Katasandi Baru(ops)"
+                        android:hint="Katasandi Baru"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +115,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Konfirmasi Katasandi Baru(Ops)"
+                        android:hint="Konfirmasi Katasandi Baru"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bgkeluar"
-                        android:src="@drawable/keluar"/>
+                        android:src="@drawable/kembali"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
