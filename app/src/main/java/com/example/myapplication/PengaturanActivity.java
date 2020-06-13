@@ -73,7 +73,7 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         mUsername = user.get(sessionManager.USERNAME);
         mFoto_user = user.get(sessionManager.FOTO_USER);
         mKtp = user.get(sessionManager.KTP);
-        URL_FOTO = "http://192.168.43.171/ciinfotani/img/user/"+mFoto_user;
+        URL_FOTO = "http://infotani.mif-project.com/img/user/"+mFoto_user;
 
         loadFoto();
     }
