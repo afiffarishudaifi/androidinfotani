@@ -82,7 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //. LOAD GAMBAR SAAT TERJADI KESALAHAN MEMUAT GMBR UTAMA
                 .error(R.drawable.ic_person_white_24dp)
                 .into(fotoUser);
-//            cek_panen();
+
+        if(mKtp != null || mId_user != null) {
+            cek_panen();
+        }
     }
 
     private void initControl() {

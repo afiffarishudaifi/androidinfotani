@@ -151,7 +151,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //kode proses daftar disini
-                simpan();
+                if(bitmap ==null){
+                    Toast.makeText(RegisterActivity.this, "Foto Harus diisi!" , Toast.LENGTH_SHORT).show();
+                }else{
+                    simpan();
+                }
             }
         });
     }

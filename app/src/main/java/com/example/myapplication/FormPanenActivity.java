@@ -82,7 +82,15 @@ public class FormPanenActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imgBtnsimpanPanen:
-                simpan();
+                if(ktp.getText().toString().trim().equals("0")){
+                    Toast.makeText(FormPanenActivity.this, "Anda belum mengisi data petani!" , Toast.LENGTH_SHORT).show();
+                }else{
+                    if(hasil.getText().toString().trim().isEmpty() && harga.getText().toString().trim().isEmpty()){
+                        Toast.makeText(FormPanenActivity.this, "Data tidak boleh kosong!" , Toast.LENGTH_SHORT).show();
+                    }else{
+                    simpan();
+                    }
+                }
                 break;
             case R.id.imgBtnKeluarPanen:
                 Intent kembali = new Intent(FormPanenActivity.this, MainActivity.class);
