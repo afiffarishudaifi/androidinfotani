@@ -44,12 +44,12 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
     private ImageView fotoUser;
     private ImageButton btnSimpan, btnKeluar;
     private EditText passLama, passBaru, passBaruKonf;
-    private Button btnFoto, btnUpdateFoto;
+    private Button btnFoto;
     private ProgressBar loadingPengaturan, loadingfoto;
     private LinearLayout linearLayoutBtnPengaturan, linearLayoutUpdateFoto;
     SessionManager sessionManager;
 
-    private String URL_UBAH_PENGATURAN, URL_UBAH_FOTO;
+    private String URL_UBAH_PENGATURAN, URL_UBAH_FOTO, URL_UBAH_LENGKAP_PENGATURAN;
 
     private String mId_user, mUsername, mFoto_user, mKtp, URL_FOTO;
 
@@ -65,6 +65,7 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         Api pengaturan = new Api();
         URL_UBAH_PENGATURAN = pengaturan.getURL_UBAH_PENGATURAN();
         URL_UBAH_FOTO = pengaturan.getURL_UBAH_FOTO();
+        URL_UBAH_LENGKAP_PENGATURAN = pengaturan.getURL_UBAH_LENGKAP_PENGATURAN();
 
         sessionManager = new SessionManager(this);
         sessionManager.checkLogin();
@@ -82,7 +83,8 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pimgBtnsimpan:
-                ubah();
+//                ubah();
+                konfirmasiInput();
                 break;
             case R.id.pimgBtnKeluar:
                 Intent toMain = new Intent(PengaturanActivity.this, MainActivity.class);
@@ -95,9 +97,6 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         CODE_GALLERY_REQUEST
                 );
-                break;
-            case R.id.pBtnUpdateFoto:
-                updatefoto();
                 break;
         }
     }
@@ -113,8 +112,6 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         btnSimpan.setOnClickListener(this);
         btnFoto = (Button) findViewById(R.id.pBtnFoto);
         btnFoto.setOnClickListener(this);
-        btnUpdateFoto = (Button) findViewById(R.id.pBtnUpdateFoto);
-        btnUpdateFoto.setOnClickListener(this);
         loadingPengaturan = (ProgressBar)findViewById(R.id.ploadingPengaturan);
         linearLayoutBtnPengaturan = (LinearLayout)findViewById(R.id.linearLayoutBtnPengaturan);
         linearLayoutUpdateFoto = (LinearLayout)findViewById(R.id.linearLayoutBtnUpdateFoto);
@@ -187,10 +184,77 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         }
         return Bitmap.createScaledBitmap(image, width, height, true);
     }
+    private void ubahLengkap(){
+        linearLayoutBtnPengaturan.setVisibility(View.GONE);
+        linearLayoutUpdateFoto.setVisibility(View.GONE);
+        loadingfoto.setVisibility(View.VISIBLE);
+        loadingPengaturan.setVisibility(View.VISIBLE);
+        final String iduser =  this.mId_user.trim();
+        final String passlama = this.passLama.getText().toString().trim();
+        final String passbaru = this.passBaru.getText().toString().trim();
+        final String passbarukonf = this.passBaruKonf.getText().toString().trim();
+        final String fotolama = this.mFoto_user.trim();
+        final String username = this.mUsername.trim();
+        final String imageData = imageToString(bitmap);
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_UBAH_LENGKAP_PENGATURAN ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            String message = jsonObject.getString("message");
+                            if(success.equals("1")) {
+                                Toast.makeText(PengaturanActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(PengaturanActivity.this, "Pesan : " + message, Toast.LENGTH_SHORT).show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(PengaturanActivity.this, "Pesan : " + e.toString(), Toast.LENGTH_SHORT).show();
+                            System.out.println(e.toString());
+                        }
+                        linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
+                        linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
+                        loadingPengaturan.setVisibility(View.GONE);
+                        loadingfoto.setVisibility(View.GONE);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(PengaturanActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                        System.out.println(error.toString());
+                        linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
+                        linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
+                        loadingPengaturan.setVisibility(View.GONE);
+                        loadingfoto.setVisibility(View.GONE);
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //mengirim data ke controller
+                Map<String, String> map = new HashMap<>();
+                map.put("iduser", iduser); //dari session
+                map.put("passlama", passlama);
+                map.put("passbaru", passbaru);
+                map.put("passbarukonf", passbarukonf);
+                map.put("fotolama", fotolama); //dari session
+                map.put("user", username); //dari session
+                map.put("foto", imageData);
+                return map;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
     private void ubah(){
+        linearLayoutUpdateFoto.setVisibility(View.GONE);
         linearLayoutBtnPengaturan.setVisibility(View.GONE);
         loadingPengaturan.setVisibility(View.VISIBLE);
+        loadingfoto.setVisibility(View.VISIBLE);
         final String iduser =  this.mId_user.trim();
         final String passlama = this.passLama.getText().toString().trim();
         final String passbaru = this.passBaru.getText().toString().trim();
@@ -218,8 +282,10 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                             Toast.makeText(PengaturanActivity.this, "Pesan : " + e.toString(), Toast.LENGTH_SHORT).show();
                             System.out.println(e.toString());
                         }
+                        linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
                         linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
                         loadingPengaturan.setVisibility(View.GONE);
+                        loadingfoto.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {
@@ -227,8 +293,10 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(PengaturanActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                         System.out.println(error.toString());
+                        linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
                         linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
                         loadingPengaturan.setVisibility(View.GONE);
+                        loadingfoto.setVisibility(View.GONE);
                     }
                 }) {
             @Override
@@ -239,10 +307,6 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                 map.put("passlama", passlama);
                 map.put("passbaru", passbaru);
                 map.put("passbarukonf", passbarukonf);
-//                map.put("fotolama", fotolama); //dari session
-//                map.put("user", username); //dari session
-//                map.put("foto", imageData);
-
                 return map;
             }
         };
@@ -251,8 +315,10 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void updatefoto(){
-    linearLayoutUpdateFoto.setVisibility(View.GONE);
-    loadingfoto.setVisibility(View.VISIBLE);
+        linearLayoutUpdateFoto.setVisibility(View.GONE);
+        linearLayoutBtnPengaturan.setVisibility(View.GONE);
+        loadingPengaturan.setVisibility(View.VISIBLE);
+        loadingfoto.setVisibility(View.VISIBLE);
         final String iduser =  this.mId_user.trim();
         final String fotolama = this.mFoto_user.trim();
         final String username = this.mUsername.trim();
@@ -278,6 +344,8 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                             System.out.println(e.toString());
                         }
                         linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
+                        linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
+                        loadingPengaturan.setVisibility(View.GONE);
                         loadingfoto.setVisibility(View.GONE);
                     }
                 },
@@ -287,6 +355,8 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
                         Toast.makeText(PengaturanActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                         System.out.println(error.toString());
                         linearLayoutUpdateFoto.setVisibility(View.VISIBLE);
+                        linearLayoutBtnPengaturan.setVisibility(View.VISIBLE);
+                        loadingPengaturan.setVisibility(View.GONE);
                         loadingfoto.setVisibility(View.GONE);
                     }
                 }) {
@@ -305,5 +375,46 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
+    private boolean validateFotoAda() {
+        if (bitmap==null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    private boolean validatePasswordBaruAda() {
+        String passwordBaru = passBaru.getText().toString().trim();
+        String passwordConf = passBaruKonf.getText().toString().trim();
+        if (passwordBaru.isEmpty() || passwordConf.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    private boolean validatePassword(){
+        String password = passLama.getText().toString().trim();
+        if (password.isEmpty()) {
+            Toast.makeText(PengaturanActivity.this, "*Katasandi Harus Diisi", Toast.LENGTH_LONG).show();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private void konfirmasiInput(){
+        if(validatePassword()){
+            if(validateFotoAda() && validatePasswordBaruAda()){
+                ubahLengkap();
+            }
+            if(validateFotoAda() == false && validatePasswordBaruAda()){
+                ubah();
+            }
+            if(validateFotoAda() && validatePasswordBaruAda() == false){
+                updatefoto();
+            }
+        }
+    }
+
 
 }

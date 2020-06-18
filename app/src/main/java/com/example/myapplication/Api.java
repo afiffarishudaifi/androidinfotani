@@ -21,6 +21,11 @@ public class Api {
     private String URL_PESAN_TOLAK = "http://infotani.mif-project.com/android/tolak_pemesanan";
     private String URL_UBAH_PENGATURAN = "http://infotani.mif-project.com/android/pengaturan";
     private String URL_UBAH_FOTO = "http://infotani.mif-project.com/android/update_foto";
+    private String URL_UBAH_LENGKAP_PENGATURAN = "http://infotani.mif-project.com/android/pengaturan_danfoto";
+
+    public String getURL_UBAH_LENGKAP_PENGATURAN() {
+        return URL_UBAH_LENGKAP_PENGATURAN;
+    }
 
     public String getURL_LOGIN() { return URL_LOGIN; }
     public String getURL_REGIST() { return URL_REGIST; }

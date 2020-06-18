@@ -62,20 +62,7 @@
                     android:textSize="11sp"
                     android:layout_margin="5dp"
                     tools:ignore="SmallSp"/>
-                <Button
-                    android:id="@+id/pBtnUpdateFoto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="10sp"
-                    android:text="Update Foto"
-                    android:layout_margin="5dp"
-                    tools:ignore="SmallSp"/>
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Form ganti katasandi"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -87,7 +74,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Katasandi Lama"
+                        android:hint="*Katasandi (Wajib)"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -101,7 +88,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Katasandi Baru"
+                        android:hint="Katasandi Baru (Opsional)"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
@@ -115,7 +102,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/bgtext"
                         android:gravity="center"
-                        android:hint="Konfirmasi Katasandi Baru"
+                        android:hint="Konfirmasi Katasandi Baru (Opsional)"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
