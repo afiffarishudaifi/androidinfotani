@@ -23,10 +23,6 @@ public class Api {
     private String URL_UBAH_FOTO = "http://infotani.mif-project.com/android/update_foto";
     private String URL_UBAH_LENGKAP_PENGATURAN = "http://infotani.mif-project.com/android/pengaturan_danfoto";
 
-    public String getURL_UBAH_LENGKAP_PENGATURAN() {
-        return URL_UBAH_LENGKAP_PENGATURAN;
-    }
-
     public String getURL_LOGIN() { return URL_LOGIN; }
     public String getURL_REGIST() { return URL_REGIST; }
     public String getURL_DESA() { return URL_DESA; }
@@ -47,5 +43,7 @@ public class Api {
     public String getURL_PESAN_TOLAK(){return URL_PESAN_TOLAK;}
     public String getURL_UBAH_PENGATURAN(){return URL_UBAH_PENGATURAN;}
     public String getURL_UBAH_FOTO(){return URL_UBAH_FOTO;}
+    public String getURL_UBAH_LENGKAP_PENGATURAN() {return URL_UBAH_LENGKAP_PENGATURAN; }
+
 
 }
