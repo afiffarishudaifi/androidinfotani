@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SessionManager sessionManager;
 
     private String URL_CEK_PANEN, URL_CEK_PEMESANAN;
+    private String notif="1";
 
     private String mId_user, mUsername, mFoto_user, mKtp, URL_FOTO;
     @Override
@@ -85,8 +86,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .into(fotoUser);
 
         if(mKtp != null || mId_user != null) {
-            cek_panen();
-            cek_pemesanan();
+            if(notif.equals("1")){
+                cek_pemesanan();
+                notif ="0";
+            }else {
+                cek_panen();
+            }
+        }
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(mKtp != null || mId_user != null) {
+            if(notif.equals("1")){
+                cek_pemesanan();
+                notif = "0";
+            }else {
+                cek_panen();
+            }
         }
     }
 
@@ -160,7 +177,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             NotificationChannel mChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, importance);
             notificationManager.createNotificationChannel(mChannel);
         }
-
         Intent mIntent = new Intent(MainActivity.this, FormPanenActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("fromnotif", "notif");
@@ -180,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setContentText("Klik Disini untuk mengisi data panen!");
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.notify(115, builder.build());
+        notificationManager.notify(111, builder.build());
     }
 
     private void cek_panen() {
@@ -236,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showNotifPesanan() {
-        String NOTIFICATION_CHANNEL_ID = "channel_androidnotif";
+        String NOTIFICATION_CHANNEL_ID = "channel_androidnotifpesan";
         Context context = this.getApplicationContext();
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -279,6 +295,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             JSONObject jsonObject = new JSONObject(response);
                             String success = jsonObject.getString("success");
                             String message = jsonObject.getString("message");
+                            notif = success;
                             if(success.equals("1")) {
                                 showNotifPesanan();
                             }
