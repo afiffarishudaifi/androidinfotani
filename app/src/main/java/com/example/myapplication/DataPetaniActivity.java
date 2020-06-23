@@ -49,7 +49,8 @@ public class DataPetaniActivity extends AppCompatActivity implements View.OnClic
     private EditText ktp, alamat, nohp;
     private TextView tglpanen,nama_desa, nama_komoditas;
     private String dnamaDesa, dnamaKomoditas;
-    private String didDesa ="0", didKomoditas="0";
+    private String didDesa ="0";
+    private String didKomoditas="0";
     private ImageButton imgBtnpetanisimpan, imgBtnpetanikeluar;
     private LinearLayout linearLayoutBtnpetani;
     private ProgressBar loadingPetani, loadingSpinnerDesa, loadingSpinnerKomoditas;
