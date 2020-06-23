@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView fotoUser;
     SessionManager sessionManager;
 
-    private String URL_CEK_PANEN;
+    private String URL_CEK_PANEN, URL_CEK_PEMESANAN;
 
     private String mId_user, mUsername, mFoto_user, mKtp, URL_FOTO;
     @Override
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Api main = new Api();
         URL_CEK_PANEN = main.getURL_CEK_PANEN();
+        URL_CEK_PEMESANAN = main.getURL_CEK_PEMESANAN();
 
         initControl();
 
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(mKtp != null || mId_user != null) {
             cek_panen();
+            cek_pemesanan();
         }
     }
 
@@ -226,6 +228,80 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Map<String, String> map = new HashMap<>();
                 map.put("ktp", ktp);
                 map.put("id_user", idUser);
+                return map;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+    private void showNotifPesanan() {
+        String NOTIFICATION_CHANNEL_ID = "channel_androidnotif";
+        Context context = this.getApplicationContext();
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            String channelName = "Android Notif Channel";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+
+            NotificationChannel mChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, importance);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
+        Intent mIntent = new Intent(MainActivity.this, RiwayatPesanActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("fromnotif", "notif");
+        mIntent.putExtras(bundle);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,NOTIFICATION_CHANNEL_ID);
+        builder.setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.logo)
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.logo))
+                .setTicker("notif starting")
+                .setAutoCancel(true)
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
+                .setLights(Color.RED, 3000, 3000)
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setContentTitle("Ada pesanan masuk!")
+                .setContentText("Klik Disini untuk melihat pemesanan!");
+
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(115, builder.build());
+    }
+
+    private void cek_pemesanan() {
+        final String ktp =  this.mKtp.trim();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_CEK_PEMESANAN ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            String message = jsonObject.getString("message");
+                            if(success.equals("1")) {
+                                showNotifPesanan();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(MainActivity.this, "Pesan : " + e.toString(), Toast.LENGTH_SHORT).show();
+                            System.out.println(e.toString());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                        System.out.println(error.toString());
+
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //mengirim data ke controller
+                Map<String, String> map = new HashMap<>();
+                map.put("ktp", ktp);
                 return map;
             }
         };
