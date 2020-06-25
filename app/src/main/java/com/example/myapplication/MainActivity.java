@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,NOTIFICATION_CHANNEL_ID);
         builder.setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.logo)
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.logo))
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.panen))
                 .setTicker("notif starting")
                 .setAutoCancel(true)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,NOTIFICATION_CHANNEL_ID);
         builder.setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.logo)
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.logo))
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.pesan))
                 .setTicker("notif starting")
                 .setAutoCancel(true)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
